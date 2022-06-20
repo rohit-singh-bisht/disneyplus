@@ -1,38 +1,115 @@
-.App {
-  text-align: center;
+
+.header__dummy{
+  width: 100%;
+  min-height: 80px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header__fixed{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header{
+  min-height: 80px;
+  background: linear-gradient(to bottom, #141b29, #0c111b 300px);
   display: flex;
-  flex-direction: column;
   align-items: center;
+  padding: 0 10px;
+}
+
+@media (min-width: 1200px){
+  header{
+    padding: 0 50px;
+  }
+}
+
+.header__search{
+  margin-left: auto;
+  position: relative;
+}
+
+.header__search__input {
+  background-color: rgba(0, 0, 0, 0);
+  border-style: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  width: 240px;
+  height: 32px;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  font-weight: 200;
+}
+
+.header__search__input::-webkit-input-placeholder{
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.header__search__input:focus {
+  border-bottom: 1px solid #1f80e0;
+  outline: none;
+  width: 360px;
+}
+
+.header__subscribe{
+  background-color: #1f80e0;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0 12px;
+  height: 24px;
+  line-height: 24px;
+  border-radius: 4px;
+  margin-left: 20px;
+}
+
+.header__login{
+  margin-left: 15px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+/* ERROR PAGE CSS */
+
+.errorPage{
+  display: flex;
+  min-height: calc(100vh - 80px);
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  flex-direction: column;
 }
 
-.App-link {
-  color: #61dafb;
+.errorPage__errorImg{
+  width: 330px;
+  height: 330px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 75%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.errorPage__title{
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.errorPage__info{
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.errorPage__homeBtn{
+  padding: 17px 77px;
+  color: #1f80e0;
+  border: 1px solid #1f80e0;
+  margin: 20px auto;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.errorPage__homeBtn:hover{
+  background-color: rgba(31, 128, 224, 0.25);
 }
