@@ -1,6 +1,7 @@
 
 import logo from '../images/logo.svg';
 import { Link } from 'react-router-dom';
+import { AiOutlineSearch } from 'react-icons/ai';
 
 export const Header = () => {
   return (
@@ -12,6 +13,9 @@ export const Header = () => {
             
             <div className="header__search">
                 <input type="search" name="" className='header__search__input' placeholder="Search" id="" />
+                <div className='header__search__btn'>
+                    <AiOutlineSearch/>
+                </div>
             </div>
 
             <Link to="/subscribe" className='header__subscribe'>

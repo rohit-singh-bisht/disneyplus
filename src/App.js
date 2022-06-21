@@ -8,10 +8,12 @@ function App() {
   return (
     <Router>
         <Header />
-      <Routes>
-        <Route path='/' element={<Homepage />} />
-        <Route path='*' element={<Errorpage />} />
-      </Routes>
+        <main>
+        <Routes>
+          <Route path='/' element={<Homepage />} />
+          <Route path='*' element={<Errorpage />} />
+        </Routes>
+      </main>
     </Router>
   );
 }

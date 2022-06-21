@@ -52,11 +52,22 @@ header{
   width: 360px;
 }
 
+.header__search__btn{
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  opacity: 0.6;
+  height: 16px;
+}
+
 .header__subscribe{
   background-color: #1f80e0;
   color: #fff;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 500;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
   padding: 0 12px;
   height: 24px;
@@ -70,6 +81,103 @@ header{
   color: rgba(255, 255, 255, 0.8);
   font-size: 14px;
   text-transform: uppercase;
+}
+
+
+/* BANNER CSS */
+
+.banner__slide{
+  position: relative;
+  margin: 0 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #030b17;
+}
+
+.banner__slide__img img{
+  height: 400px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.banner__content{
+  width: 40%;
+  padding-top: 66px;
+  padding-left: 50px;
+  padding-right: 5%;
+  position: absolute;
+  left: 0;
+  height: 100%;
+  top: 0;
+  z-index: 9;
+}
+
+.fluid{
+  max-width: 100%;
+  height: auto;
+}
+
+.banner__slide__img{
+  position: relative;
+  margin-left: auto;
+}
+
+.banner__slide__overlay{
+  width: 200px;
+  height: 100%;
+  position: absolute;
+  background: linear-gradient(to right, #030b17, rgba(0,0,0,0));
+  top: 0;
+  left: 0;
+}
+
+.banner__title{
+  font-size: 28px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.banner__info{
+  font-size: 16px;
+  font-weight: 300;
+  padding-top: 12px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.banner__meta__data:not(:last-child)::after{
+  content: '';
+  font-size: 3px;
+  padding: 6px;
+  font-style: normal;
+  vertical-align: middle;
+}
+
+.banner__description{
+  font-size: 16px;
+  padding-top: 10px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 300;
+  line-height: 28px;
+}
+
+.banner .slick__prev{
+  
+}
+
+@media only screen and (max-width: 1366px){
+
+  .banner__slide__img{
+    width: 800px;
+  }
+
+}
+
+@media (min-width: 1367px) {
+  
+  .banner__slide__img{
+    width: 830px;
+  }
+
 }
 
 /* ERROR PAGE CSS */
@@ -113,3 +221,4 @@ header{
 .errorPage__homeBtn:hover{
   background-color: rgba(31, 128, 224, 0.25);
 }
+
