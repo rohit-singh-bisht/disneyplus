@@ -180,6 +180,58 @@ header{
 
 }
 
+/* MOVIE TRAY */
+
+.tray__card{
+  margin: 0 5px;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  transition: all .25s cubic-bezier(0.33, 0.04, 0.63, 0.93);
+}
+
+.tray__card.expand{
+  transform: scale3d(1.3, 1.3, 1) translate3d(0, 0, 0) perspective(500px);
+}
+
+.tray__card.expand .tray__details{
+  opacity: 1;
+}
+
+.tray__details{
+  padding: 30px 10px 7px 10px;
+  background-image: linear-gradient(to bottom, rgba(4,8,15,0), #192133, #192133);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  opacity: 0;
+  transition: all .25s cubic-bezier(0.33, 0.04, 0.63, 0.93);
+}
+
+.tray__title{
+  font-size: 10px;
+  color: #fff;
+  font-weight: 300;
+  margin-bottom: 2px;
+}
+
+.tray__card__img img{
+  width: 100%;
+}
+
+.tray__subtitle{
+  font-size: calc(11px / 1.3);
+  margin-bottom: 2px;
+}
+
+.tray__description{
+  font-size: calc(11px / 1.3);
+  margin-bottom: 2;
+  opacity: 0.8;
+}
+
 /* ERROR PAGE CSS */
 
 .errorPage{

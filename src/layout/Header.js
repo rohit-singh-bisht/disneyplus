@@ -2,8 +2,27 @@
 import logo from '../images/logo.svg';
 import { Link } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai';
+import { getAuth, signInWithPopup } from "firebase/auth";
+import { provider } from '../firebase';
+import { useState } from 'react';
 
 export const Header = () => {
+
+    const [userLoggedIn, setUserLoggedIn] = useState(false);
+    const [userName, setUserName] = useState('');
+
+    const handleFirebaseLogin = () => {
+        const auth = getAuth();
+        signInWithPopup(auth, provider).then((res) => {
+            console.log(res);
+            setUserLoggedIn(true);
+            setUserName(res.user.displayName);
+        }).catch((error) => {
+            setUserLoggedIn(false);
+            alert(error.message);
+        })
+    }
+
   return (
       <div className='header'>
         <div className="header__dummy">
@@ -22,7 +41,13 @@ export const Header = () => {
                 Subscribe
             </Link>
 
-            <Link to="/login" className='header__login'>Login</Link>
+            { userLoggedIn ? 
+            <div className='header__user'>
+                <h4 className="header__user__name">
+                    {userName}
+                </h4>
+            </div> :
+            <Link to="#" onClick={handleFirebaseLogin} className='header__login'>Login</Link> }
         </header>
       </div>
   )

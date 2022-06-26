@@ -22,3 +22,13 @@ a{
   text-decoration: none;
   display: inline-block;
 }
+
+.ellipsize {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-align: left;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  white-space: normal;
+}
