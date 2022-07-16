@@ -21,6 +21,7 @@ export const Carousel = styled(Slider)`
         align-items: center;
         position: absolute;
         transition: all 0.2s;
+        transform: translate(0);
     }
 
     & > .slick__prev{
@@ -35,5 +36,13 @@ export const Carousel = styled(Slider)`
 
     & > .slick-prev::before{
         content: ""
+    }
+
+    $ .slick__prev.slick-disabled{
+        display: none;
+    }
+
+    $ .slick__next.slick-disabled{
+        display: none;
     }
 `

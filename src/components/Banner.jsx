@@ -104,7 +104,7 @@ export const Banner = () => {
 
   return (
     <>
-      <section className="banner">
+      <section className="banner" style={{ marginBottom: '5px'}}>
           <Carousel className="banner__slider" {...settings}>
             {
                 slideData.map((item, index) => {

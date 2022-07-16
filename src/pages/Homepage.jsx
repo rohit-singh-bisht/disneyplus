@@ -7,6 +7,7 @@ export const Homepage = () => {
       <div className='homepage'>
         <Banner />
         <MovieTray heading="Latest & Trending" />
+        <MovieTray heading="Popular Shows" />
       </div>
   )
 }

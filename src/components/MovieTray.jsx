@@ -1,27 +1,25 @@
 import React from 'react'
 import styled from "styled-components";
 import { Carousel } from '../styled/Carousel';
-import NineHours from '../images/tray/9Hours.webp';
 import {BsChevronRight, BsChevronLeft} from  "react-icons/bs";
-import { useState } from 'react';
+import { VerticalMovieCard } from './VerticalMovieCard';
 
 export const MovieTray = (props) => {
 
-    const [hovered, setHovered] = useState(false)
 
     function PrevArrow(props) {
-        const { onClick } = props;
+        const { onClick, className } = props;
         return (
-            <div className="slick-arrow slick__prev" onClick={onClick}>
+            <div className={"slick__prev " + className} onClick={onClick}>
                 <BsChevronLeft style={{ fontSize: "30px" }}/>
             </div>
         );
     }
 
     function NextArrow(props) {
-        const { onClick } = props;
+        const { onClick, className } = props;
         return (
-            <div className="slick-arrow slick__next" onClick={onClick}>
+            <div className={'slick__next ' + className} onClick={onClick}>
                <BsChevronRight style={{ fontSize: "30px" }}/>
             </div>
         );
@@ -36,194 +34,28 @@ export const MovieTray = (props) => {
     prevArrow: <PrevArrow />
   }
 
-  const trayHover = () => {
-    setTimeout(() => {
-        setHovered(true);
-    }, 200)
-  }
-
-  const trayHoverOut = () => {
-    setTimeout(() => {
-        setHovered(false);
-    }, 200)
-  }
-
   return (
       <>
         <Movie>
             <h2 className='tray__heading'>{props.heading}</h2>
             <div>
                 <Carousel {...settings}>
-                    <div style={{ display: "inline-block" }}>
-                        <div className={`tray__card` + (hovered ? ' expand' : '') } style={{  zIndex:hovered ? '5' : '' }} onMouseEnter={trayHover} onMouseLeave={trayHoverOut}>
-                            <div className="tray__card__img">
-                                <img src={NineHours} alt="" />
-                            </div>
-                            <div className="tray__details">
-                                <h3 className="tray__title">
-                                9 Hours
-                                </h3>
-                                <p className="tray__subtitle">Drama, Thriller, Hotstar Specials</p>
-                                <p className="tray__description ellipsize">
-                                In the pursuit of justice for her deceased mother, a fierce Sana Kapoor fights her father and uncove 
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div style={{ display: "inline-block" }}>
-                        <div className='tray__card'>
-                            <div className="tray__card__img">
-                                <img src={NineHours} alt="" />
-                            </div>
-                            <div className="tray__details">
-                                <h3 className="tray__title">
-                                9 Hours
-                                </h3>
-                                <p className="tray__subtitle">Drama, Thriller, Hotstar Specials</p>
-                                <p className="tray__description ellipsize">
-                                In the pursuit of justice for her deceased mother, a fierce Sana Kapoor fights her father and uncove 
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div style={{ display: "inline-block" }}>
-                        <div className='tray__card'>
-                            <div className="tray__card__img">
-                                <img src={NineHours} alt="" />
-                            </div>
-                            <div className="tray__details">
-                                <h3 className="tray__title">
-                                9 Hours
-                                </h3>
-                                <p className="tray__subtitle">Drama, Thriller, Hotstar Specials</p>
-                                <p className="tray__description ellipsize">
-                                In the pursuit of justice for her deceased mother, a fierce Sana Kapoor fights her father and uncove 
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div style={{ display: "inline-block" }}>
-                        <div className='tray__card'>
-                            <div className="tray__card__img">
-                                <img src={NineHours} alt="" />
-                            </div>
-                            <div className="tray__details">
-                                <h3 className="tray__title">
-                                9 Hours
-                                </h3>
-                                <p className="tray__subtitle">Drama, Thriller, Hotstar Specials</p>
-                                <p className="tray__description ellipsize">
-                                In the pursuit of justice for her deceased mother, a fierce Sana Kapoor fights her father and uncove 
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div style={{ display: "inline-block" }}>
-                        <div className='tray__card'>
-                            <div className="tray__card__img">
-                                <img src={NineHours} alt="" />
-                            </div>
-                            <div className="tray__details">
-                                <h3 className="tray__title">
-                                9 Hours
-                                </h3>
-                                <p className="tray__subtitle">Drama, Thriller, Hotstar Specials</p>
-                                <p className="tray__description ellipsize">
-                                In the pursuit of justice for her deceased mother, a fierce Sana Kapoor fights her father and uncove 
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div style={{ display: "inline-block" }}>
-                        <div className='tray__card'>
-                            <div className="tray__card__img">
-                                <img src={NineHours} alt="" />
-                            </div>
-                            <div className="tray__details">
-                                <h3 className="tray__title">
-                                9 Hours
-                                </h3>
-                                <p className="tray__subtitle">Drama, Thriller, Hotstar Specials</p>
-                                <p className="tray__description ellipsize">
-                                In the pursuit of justice for her deceased mother, a fierce Sana Kapoor fights her father and uncove 
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div style={{ display: "inline-block" }}>
-                        <div className='tray__card'>
-                            <div className="tray__card__img">
-                                <img src={NineHours} alt="" />
-                            </div>
-                            <div className="tray__details">
-                                <h3 className="tray__title">
-                                9 Hours
-                                </h3>
-                                <p className="tray__subtitle">Drama, Thriller, Hotstar Specials</p>
-                                <p className="tray__description ellipsize">
-                                In the pursuit of justice for her deceased mother, a fierce Sana Kapoor fights her father and uncove 
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div style={{ display: "inline-block" }}>
-                        <div className='tray__card'>
-                            <div className="tray__card__img">
-                                <img src={NineHours} alt="" />
-                            </div>
-                            <div className="tray__details">
-                                <h3 className="tray__title">
-                                9 Hours
-                                </h3>
-                                <p className="tray__subtitle">Drama, Thriller, Hotstar Specials</p>
-                                <p className="tray__description ellipsize">
-                                In the pursuit of justice for her deceased mother, a fierce Sana Kapoor fights her father and uncove 
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div style={{ display: "inline-block" }}>
-                        <div className='tray__card'>
-                            <div className="tray__card__img">
-                                <img src={NineHours} alt="" />
-                            </div>
-                            <div className="tray__details">
-                                <h3 className="tray__title">
-                                9 Hours
-                                </h3>
-                                <p className="tray__subtitle">Drama, Thriller, Hotstar Specials</p>
-                                <p className="tray__description ellipsize">
-                                In the pursuit of justice for her deceased mother, a fierce Sana Kapoor fights her father and uncove 
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div style={{ display: "inline-block" }}>
-                        <div className='tray__card'>
-                            <div className="tray__card__img">
-                                <img src={NineHours} alt="" />
-                            </div>
-                            <div className="tray__details">
-                                <h3 className="tray__title">
-                                9 Hours
-                                </h3>
-                                <p className="tray__subtitle">Drama, Thriller, Hotstar Specials</p>
-                                <p className="tray__description ellipsize">
-                                In the pursuit of justice for her deceased mother, a fierce Sana Kapoor fights her father and uncove 
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    <VerticalMovieCard />
+                    <VerticalMovieCard />
+                    <VerticalMovieCard />
+                    <VerticalMovieCard />
+                    <VerticalMovieCard />
+                    <VerticalMovieCard />
+                    <VerticalMovieCard />
+                    <VerticalMovieCard />
+                    <VerticalMovieCard />
+                    <VerticalMovieCard />
+                    <VerticalMovieCard />
+                    <VerticalMovieCard />
+                    <VerticalMovieCard />
+                    <VerticalMovieCard />
+                    <VerticalMovieCard />
+                    <VerticalMovieCard />
                 </Carousel>
             </div>
         </Movie>
@@ -234,6 +66,7 @@ export const MovieTray = (props) => {
 const Movie = styled.div`
     padding: 0 50px;
     margin-top: 30px;
+    overflow-x: clip;
 
     & > .tray__heading{
         font-weight: 400;
@@ -248,13 +81,30 @@ const Movie = styled.div`
     & .slick-arrow{
         width: 4vw;
         justify-content: center;
+        color: #fff;
     }
 
-    & .slick__prev{
+    & .slick-prev:before,  & .slick-next:before{
+        display: none;
+    }
+
+    & .slick-prev{
         left: -50px;
+        background: linear-gradient(to left, transparent, rgba(12,17,27,0.7), rgba(12,17,27,0.9));
     }
 
-    & .slick__next{
+    & .slick-next{
         right: -50px;
+        background: linear-gradient(to right, transparent, rgba(12,17,27,0.7), rgba(12,17,27,0.9));
     }
+
+    & .slick-slide:nth-child(8n + 1) .tray__card{
+        transform-origin: left;
+    }
+
+    & .slick-slide:nth-child(8n + 8) .tray__card{
+        transform-origin: right;
+    }
+
+
 `

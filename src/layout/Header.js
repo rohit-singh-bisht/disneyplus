@@ -5,22 +5,32 @@ import { AiOutlineSearch } from 'react-icons/ai';
 import { getAuth, signInWithPopup } from "firebase/auth";
 import { provider } from '../firebase';
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setUserLoginDetails } from '../features/user/userSlice';
 
 export const Header = () => {
+    const dispatch = useDispatch();
+    const userName = useSelector(state => state.user.name);
 
     const [userLoggedIn, setUserLoggedIn] = useState(false);
-    const [userName, setUserName] = useState('');
+    const [usersName, setUserName] = useState('');
 
     const handleFirebaseLogin = () => {
         const auth = getAuth();
         signInWithPopup(auth, provider).then((res) => {
             console.log(res);
+            
+            setUser(res.user);
             setUserLoggedIn(true);
             setUserName(res.user.displayName);
         }).catch((error) => {
             setUserLoggedIn(false);
             alert(error.message);
         })
+    }
+
+    const setUser = (user) => {
+        dispatch(setUserLoginDetails(user))
     }
 
   return (
@@ -41,7 +51,7 @@ export const Header = () => {
                 Subscribe
             </Link>
 
-            { userLoggedIn ? 
+            { userName ? 
             <div className='header__user'>
                 <h4 className="header__user__name">
                     {userName}
