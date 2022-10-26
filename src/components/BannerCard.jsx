@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const BannerSlideCard = (props) => {
+export const BannerCard = (props) => {
     const imgData = props.item.meta;
   return (
     <div style={{ display: "inline-block", width: "100%" }}>

@@ -1,7 +1,8 @@
 import React from "react";
 import { Carousel } from "../styled/Carousel";
-import { BannerSlideCard } from "./BannerSlideCard";
+import { BannerCard } from "./BannerCard";
 import sbp75 from "../images/movies/sbp75.webp";
+import vikram from "../images/movies/vikram.webp";
 import moonKnight from "../images/movies/moonKnight.webp";
 import {BsChevronRight, BsChevronLeft} from  "react-icons/bs";
 
@@ -71,34 +72,17 @@ export const Banner = () => {
       },
       {
         sno: 3,
-        title: "SPB 75",
+        title: "Vikram",
         meta: [
             {
-                data: "StarPlus"
+                data: "Action"
             },
             {
-                data: "Hindi"
-            },
-            {
-                data: "Reality"
+                data: "2022"
             }
         ],
-        description: "On the birth anniversary of the legendary singer, late Mr. SP Balasubrahmanyam, relive some of his evergreen melodies.",
-        img: sbp75
-      },
-      {
-        sno: 2,
-        title: "Moon Knight",
-        meta: [
-            {
-                data: "Marvel"
-            },
-            {
-                data: "Superhero"
-            }
-        ],
-        description: "Mild-mannered Steven Grant has dissociative identity disorder and shares a body with a mercenary.",
-        img: moonKnight
+        description: "A covert investigation changes its course when special officer Amar encounters an unrelenting Vikram and his pursuit to take down a notorious drug cartel.",
+        img: vikram
       }
   ]
 
@@ -108,7 +92,7 @@ export const Banner = () => {
           <Carousel className="banner__slider" {...settings}>
             {
                 slideData.map((item, index) => {
-                    return <BannerSlideCard key={index} item={item} />
+                    return <BannerCard key={index} item={item} />
                 })
             }
           </Carousel>

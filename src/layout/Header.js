@@ -4,21 +4,21 @@ import { Link } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { getAuth, signInWithPopup } from "firebase/auth";
 import { provider } from '../firebase';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setUserLoginDetails } from '../features/user/userSlice';
 
 export const Header = () => {
     const dispatch = useDispatch();
     const userName = useSelector(state => state.user.name);
+    const auth = getAuth();
 
     const [userLoggedIn, setUserLoggedIn] = useState(false);
     const [usersName, setUserName] = useState('');
 
     const handleFirebaseLogin = () => {
-        const auth = getAuth();
         signInWithPopup(auth, provider).then((res) => {
-            console.log(res);
+            console.log("Res", res);
             
             setUser(res.user);
             setUserLoggedIn(true);
@@ -32,6 +32,14 @@ export const Header = () => {
     const setUser = (user) => {
         dispatch(setUserLoginDetails(user))
     }
+
+    useEffect(() => {
+        auth.onAuthStateChanged((user) => {
+            if(user){
+                console.log("User", user);
+            }
+        })
+    }, [])
 
   return (
       <div className='header'>

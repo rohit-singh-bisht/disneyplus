@@ -368,3 +368,13 @@ footer{
   background-position: 100% 100%;
   margin-bottom: 5px;
 }
+
+.flex__items__box{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex__items__box > *{
+  flex: 0 0 12.5%;
+  margin-bottom: 30px;
+}
